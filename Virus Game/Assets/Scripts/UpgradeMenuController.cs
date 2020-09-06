@@ -15,7 +15,7 @@ public class UpgradeMenuController : MonoBehaviour
     public float APC_multiplier = 0.4f;
     public float clickUpgradePrice = 25f;
     public float price_multiplier = 1.6f;
-    /*nový riadok*/
+    
     public Text FaceMaskInfo;
     public Text FaceMaskUpgradePrice;
     public bool faceMaskAquired = false;
