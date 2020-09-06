@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject virusPrefab;
     public Text virusMoneyText;
+    public Text apsText;
     public float virusMoney;
     public float virusGainPerClick = 1f;
     public float virusGainPerSec = 0f;
@@ -24,9 +25,10 @@ public class GameController : MonoBehaviour
     {
         
         virusGainPerClick = umc.current_APC;
-        virusGainPerSec = umc.FMU_current_APS /*+ ďalšie*/;
         virusMoney = umc.virusMoney;
+        virusGainPerSec = umc.SucetAPS();
         virusMoneyText.text = System.Math.Round(virusMoney,1).ToString();
+        apsText.text = "APS : " + System.Math.Round(umc.SucetAPS(),1).ToString();
         
     }
 
@@ -57,4 +59,5 @@ public class GameController : MonoBehaviour
         upgradeMenuPanel.SetActive(false);
         shadowPanel.SetActive(false);
     }
+
 }
